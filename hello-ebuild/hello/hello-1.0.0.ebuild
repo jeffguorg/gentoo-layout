@@ -104,6 +104,10 @@ DEPEND="${RDEPEND}"
 # only need to be present in the native build system (CBUILD). Example:
 #BDEPEND="virtual/pkgconfig"
 
+src_prepare() {
+	mkdir -pv ${WORKDIR}/${P}
+}
+
 
 # The following src_configure function is implemented as default by portage, so
 # you only need to call it if you need a different behaviour.
