@@ -105,6 +105,8 @@ DEPEND="${RDEPEND}"
 #BDEPEND="virtual/pkgconfig"
 
 src_prepare() {
+	echo src_prepare >&2
+
 	mkdir -pv ${WORKDIR}/${P}
 }
 
