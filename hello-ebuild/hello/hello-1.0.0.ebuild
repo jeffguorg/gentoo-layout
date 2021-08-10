@@ -107,7 +107,7 @@ DEPEND="${RDEPEND}"
 
 # The following src_configure function is implemented as default by portage, so
 # you only need to call it if you need a different behaviour.
-#src_configure() {
+src_configure() {
 	# Most open-source packages use GNU autoconf for configuration.
 	# The default, quickest (and preferred) way of running configure is:
 	#econf
@@ -126,11 +126,12 @@ DEPEND="${RDEPEND}"
 	# Note the use of --infodir and --mandir, above. This is to make
 	# this package FHS 2.2-compliant.  For more information, see
 	#   https://wiki.linuxfoundation.org/lsb/fhs
-#}
+	echo nothing to do
+}
 
 # The following src_compile function is implemented as default by portage, so
 # you only need to call it, if you need different behaviour.
-#src_compile() {
+src_compile() {
 	# emake is a script that calls the standard GNU make with parallel
 	# building options for speedier builds (especially on SMP systems).
 	# Try emake first.  It might not work for some packages, because
@@ -140,7 +141,8 @@ DEPEND="${RDEPEND}"
 	# worked around.
 
 	#emake
-#}
+	echo $S > $S/.test
+}
 
 # The following src_install function is implemented as default by portage, so
 # you only need to call it, if you need different behaviour.
